@@ -1,4 +1,4 @@
-FROM tomcat:9.0
+FROM tomcat:jdk8
 
 ADD src/ /helloworld/src
 ADD pom.xml /helloworld

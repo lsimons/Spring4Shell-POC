@@ -1,5 +1,7 @@
 # Spring4Shell PoC Application
 
+This branch proves the PoC exploit does _not_ work with JDK8.
+
 This is a dockerized application that is vulnerable to the Spring4Shell vulnerability. Full Java source for the war is provided and modifiable, the war will get re-built whenever the docker image is built. There is nothing special about this application, it's a simple hello world that's based off Spring tutorials.
 
 Details: https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities
@@ -12,7 +14,7 @@ Details: https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities
 ## Instructions
 
 1. Clone the repository
-2. Build and run the container: `docker build . -t spring4shell && docker run -p 8080:8080 spring4shell`
+2. Build and run the container: `docker build . -t spring4shell8 && docker run -p 8080:8080 spring4shell8`
 3. App should now be available at http://localhost:8080/helloworld/greeting
 
 ![WebPage](screenshots/webpage.png?raw=true)
@@ -26,6 +28,7 @@ Details: https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities
 
 ![WebPage](screenshots/RCE.png?raw=true)
 
+*(This step should fail because the deployment of shell.jsp failed.)*
 
 
 ## Notes
